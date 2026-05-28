@@ -1489,11 +1489,13 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var ytPlayer;
-function onYouTubeIframeAPIReady() {
+var ytPlayer = null;
+
+// Expose explicitly to window scope so the YouTube script can find it
+window.onYouTubeIframeAPIReady = function() {
   ytPlayer = new YT.Player('love-youtube-player', {
-    height: '0',
-    width: '0',
+    height: '1',
+    width: '1',
     videoId: 'kYt_lU6tWkM', // YouTube video ID for HowL - Love U
     playerVars: {
       'autoplay': 0,
@@ -1505,4 +1507,9 @@ function onYouTubeIframeAPIReady() {
       'playsinline': 1
     }
   });
+};
+
+// Fallback in case YouTube API loaded faster than this script executes
+if (window.YT && window.YT.Player) {
+  window.onYouTubeIframeAPIReady();
 }
