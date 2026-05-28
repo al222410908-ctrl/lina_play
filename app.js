@@ -772,7 +772,6 @@ function redeemCoupon(id, element) {
   localStorage.setItem('linaplay_coupons', JSON.stringify(coupons));
 
   // Audio chime effect
-  const audio = document.getElementById('love-audio');
 
   // Blast hearts from coupon element!
   const rect = element.getBoundingClientRect();
@@ -925,24 +924,24 @@ function initAmbientHearts() {
 
 // Custom Audio Control Rotating disk
 function initMusicPlayer() {
-  const audio = document.getElementById('love-audio');
   const btn = document.getElementById('btn-music-play');
   const vinyl = document.getElementById('vinyl-disc');
+  let isPlaying = false;
 
   btn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play().then(() => {
-        btn.innerText = "Pausar 🌸";
-        vinyl.classList.add('playing');
-      }).catch(err => {
-        console.log("Audio failed to auto-start due to browser security blocking.", err);
-        alert("Click en aceptar para escuchar música instrumental de fondo 🎵");
-        audio.play();
-        btn.innerText = "Pausar 🌸";
-        vinyl.classList.add('playing');
-      });
+    if (!ytPlayer || typeof ytPlayer.playVideo !== 'function') {
+      alert("El reproductor de YouTube se está cargando, por favor espera un momento... 🎵");
+      return;
+    }
+
+    if (!isPlaying) {
+      ytPlayer.playVideo();
+      isPlaying = true;
+      btn.innerText = "Pausar 🌸";
+      vinyl.classList.add('playing');
     } else {
-      audio.pause();
+      ytPlayer.pauseVideo();
+      isPlaying = false;
       btn.innerText = "Escuchar Música 🎵";
       vinyl.classList.remove('playing');
     }
@@ -1481,5 +1480,28 @@ function initLinaFormHandlers() {
     // Sweet heart blast from page center
     createHeartExplosion(window.innerWidth / 2, window.innerHeight / 2);
     alert("¡Tu respuesta ha sido guardada con amor! 🌸💖 Alan la leerá cuando voltee esta polaroid.");
+  });
+}
+
+// Load YouTube Iframe API dynamically
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var ytPlayer;
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('love-youtube-player', {
+    height: '0',
+    width: '0',
+    videoId: 'kYt_lU6tWkM', // YouTube video ID for HowL - Love U
+    playerVars: {
+      'autoplay': 0,
+      'loop': 1,
+      'playlist': 'kYt_lU6tWkM', // Required for looping in YouTube player
+      'controls': 0,
+      'showinfo': 0,
+      'modestbranding': 1
+    }
   });
 }
