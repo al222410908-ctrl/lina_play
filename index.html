@@ -232,11 +232,12 @@
       </div>
     </div>
     <div class="music-controls">
-      <span class="song-title" id="song-title">Yiruma - River Flows in You</span>
+      <span class="song-title" id="song-title">HowL - Love U 🎵</span>
       <button class="btn-music-toggle" id="btn-music-play">Escuchar Música 🎵</button>
     </div>
-    <!-- Hidden audio element. Using royalty-free soft romantic instrumental piano sound -->
+    <!-- Hidden audio element. Primary local MP3 with online fallback -->
     <audio id="love-audio" loop>
+      <source src="love_u.mp3" type="audio/mpeg">
       <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
   </div>
