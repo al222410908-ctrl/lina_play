@@ -1501,7 +1501,8 @@ function onYouTubeIframeAPIReady() {
       'playlist': 'kYt_lU6tWkM', // Required for looping in YouTube player
       'controls': 0,
       'showinfo': 0,
-      'modestbranding': 1
+      'modestbranding': 1,
+      'playsinline': 1
     }
   });
 }
