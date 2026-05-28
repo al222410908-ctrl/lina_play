@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinaPlay | Nuestro Álbum de Recuerdos & Mesversarios</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/neon/96/romantic-movies.png">
+
+  <!-- Premium Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Floating Heart Particles Layer -->
+  <div id="heart-particles"></div>
+
+  <div class="app-container">
+
+    <!-- Header Branding -->
+    <header>
+      <div class="logo-container">
+        <span class="logo-heart"> </span>
+        <span class="logo-text">LinaPlay</span>
+      </div>
+      <h1 class="main-title">Nuestro Libro de Amor</h1>
+      <p class="subtitle">Porque contigo es diferente... por más que fue lo que te gusto... ✨</p>
+    </header>
+
+    <!-- Couple Selector Header Panel -->
+    <div class="couple-selector-wrapper">
+      <span class="selector-label">Visita de hoy:</span>
+      <div class="couple-toggles">
+        <button class="btn-toggle-role active" id="btn-role-alan" data-role="alan">👑 Alan</button>
+        <button class="btn-toggle-role" id="btn-role-lina" data-role="lina">🌸 Lina</button>
+      </div>
+    </div>
+
+    <!-- Relationship Live Counter -->
+    <section class="love-clock-section">
+      <h2 class="clock-title">⏱️ Nuestro Tiempo Juntos</h2>
+      <div class="clock-grid">
+        <div class="clock-card" id="clock-years-card">
+          <div class="clock-value" id="clock-years">00</div>
+          <div class="clock-label">Años</div>
+        </div>
+        <div class="clock-card" id="clock-months-card">
+          <div class="clock-value" id="clock-months">00</div>
+          <div class="clock-label">Meses</div>
+        </div>
+        <div class="clock-card">
+          <div class="clock-value" id="clock-days">00</div>
+          <div class="clock-label">Días</div>
+        </div>
+        <div class="clock-card">
+          <div class="clock-value" id="clock-hours">00</div>
+          <div class="clock-label">Horas</div>
+        </div>
+        <div class="clock-card">
+          <div class="clock-value" id="clock-minutes">00</div>
+          <div class="clock-label">Min.</div>
+        </div>
+      </div>
+      <div class="next-milestone" id="milestone-container">
+        <span>Próximo Mesversario en:</span>
+        <b id="countdown-next">00d 00h 00m 00s</b>
+      </div>
+    </section>
+
+    <!-- Couple Profiles Section -->
+    <section class="profiles-section">
+
+      <!-- Él (Alan) Card -->
+      <div class="profile-card">
+        <div class="profile-avatar-container">
+          <img src="img/alan.jpeg" alt="Alan" class="profile-avatar" id="avatar-alan">
+          <div class="profile-badge">👑</div>
+        </div>
+        <div class="profile-info">
+          <span class="profile-role">El Novio</span>
+          <h3 class="profile-name" id="name-alan">Alan</h3>
+          <div class="profile-meta">
+            <span> alanmbre</span>
+            <span>📍 Su lugar favorito: Lina</span>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-row">
+              <div class="stat-label-container">
+                <span>Detalles y Mimos</span>
+                <span>98%</span>
+              </div>
+              <div class="stat-bar-container">
+                <div class="stat-bar-fill" style="width: 98%;"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label-container">
+                <span>Celos Tiernos</span>
+                <span>50%</span>
+              </div>
+              <div class="stat-bar-container">
+                <div class="stat-bar-fill" style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label-container">
+                <span>Amor por Lina</span>
+                <span>Infinito</span>
+              </div>
+              <div class="stat-bar-container">
+                <div class="stat-bar-fill" style="width: 100%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ella (Lina) Card -->
+      <div class="profile-card">
+        <div class="profile-avatar-container">
+          <img src="img/line.jpeg" alt="Lina" class="profile-avatar" id="avatar-lina">
+          <div class="profile-badge">🌸</div>
+        </div>
+        <div class="profile-info">
+          <span class="profile-role">La Novia</span>
+          <h3 class="profile-name" id="name-lina">Lina</h3>
+          <div class="profile-meta">
+            <span>Line</span>
+            <span>📍 Su sonrisa cura todo</span>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-row">
+              <div class="stat-label-container">
+                <span>Dulzura y Sonrisas</span>
+                <span>100%</span>
+              </div>
+              <div class="stat-bar-container">
+                <div class="stat-bar-fill" style="width: 100%;"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label-container">
+                <span>Enojamiento</span>
+                <span>95%</span>
+              </div>
+              <div class="stat-bar-container">
+                <div class="stat-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label-container">
+                <span>Amor por Alan</span>
+                <span>Infinito</span>
+              </div>
+              <div class="stat-bar-container">
+                <div class="stat-bar-fill" style="width: 100%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Memories timeline Album Section -->
+    <section class="timeline-section">
+      <div class="section-header">
+        <h2 class="section-title">📖 Nuestro Álbum de Fotos & Recuerdos</h2>
+        <p class="section-desc">
+          Comenzando desde el mágico 15 de Mayo de 2025, aquí guardamos los capítulos de nuestra historia de amor,
+          celebrados cada 15 de cada mes.
+        </p>
+        <button type="button" class="btn-reset-album" id="btn-reset-album">
+          🔄 Cargar fotos/textos nuevos desde el código (Reset)
+        </button>
+      </div>
+
+      <!-- Timline Grid where JS will populate the 13 Polaroid cards dynamically -->
+      <div class="timeline-grid" id="memories-grid"></div>
+    </section>
+
+    <!-- Wishbox board Section -->
+    <section class="wishbox-section">
+      <div class="wishbox-grid">
+
+        <!-- Left Side: Custom wish list (Wishes to achieve together) -->
+        <div>
+          <h3 class="wishes-col-title">🎈 Lista de Deseos Juntos</h3>
+          <p class="section-desc" style="text-align:left; margin-bottom:1rem; font-size:0.85rem;">
+            Escribe cosas locas, viajes o aventuras que deseen hacer juntos y márquenlas cuando se cumplan.
+          </p>
+          <form class="wish-input-form" id="wish-form">
+            <input type="text" class="wish-input" id="wish-input"
+              placeholder="Ej: Ver las estrellas juntos en el bosque..." required>
+            <button type="submit" class="btn-wish">Agregar ✨</button>
+          </form>
+          <div class="wishes-list" id="wishes-list">
+            <!-- Wishes injected dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Right Side: Love coupons canjeables (Romantic virtual redeemables) -->
+        <div>
+          <h3 class="wishes-col-title">🎟️ Cupones de Amor Canjeables</h3>
+          <p class="section-desc" style="text-align:left; margin-bottom:1rem; font-size:0.85rem;">
+            Cupones listos para que Lina los reclame en cualquier momento. ¡Válidos 100% de por vida!
+          </p>
+          <div class="wishes-list" id="coupons-list">
+            <!-- Coupons injected dynamically via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Page Footer -->
+    <footer>
+      <p>Hecho con <span class="footer-heart">❤️</span> por Alan para su persona favorita, Lina.</p>
+      <p>LinaPlay © 2026 - Nuestro amor perdura por siempre.</p>
+    </footer>
+
+  </div>
+
+  <!-- FLOATING MUSIC PLAYER WIDGET -->
+  <div class="floating-music-widget">
+    <div class="vinyl-container">
+      <div class="vinyl-disc" id="vinyl-disc">
+        <div class="vinyl-center"></div>
+      </div>
+    </div>
+    <div class="music-controls">
+      <span class="song-title" id="song-title">Yiruma - River Flows in You</span>
+      <button class="btn-music-toggle" id="btn-music-play">Escuchar Música 🎵</button>
+    </div>
+    <!-- Hidden audio element. Using royalty-free soft romantic instrumental piano sound -->
+    <audio id="love-audio" loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+
+  <!-- MODAL 1: 3D ROTATION LOVE LETTER POLAROID MODAL -->
+  <div class="modal-overlay" id="letter-modal-overlay">
+    <div class="modal-container modal-love-letter">
+      <button class="modal-close" id="btn-close-letter">×</button>
+
+      <!-- Flippable 3D card wrapper -->
+      <div class="letter-flip-container" id="letter-flip-card">
+        <div class="letter-card">
+
+          <!-- Card Front: Polaroid Photo and caption -->
+          <div class="letter-face face-front">
+            <div class="modal-tape"></div>
+            <div class="modal-img-container" id="modal-letter-media-container">
+              <!-- Inyectado dinámicamente -->
+            </div>
+            <div class="modal-caption-front">
+              <div class="modal-month-tag" id="modal-letter-month">Mes X</div>
+              <h3 class="modal-title-front" id="modal-letter-title">Título del Recuerdo</h3>
+              <div class="flip-tip">
+                <span>🔄 Click para voltear y leer carta</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Back: Handwritten Letter -->
+          <div class="letter-face face-back">
+            <div class="letter-back-header">
+              <span class="letter-back-date" id="modal-letter-date">15 de Mayo, 2025</span>
+              <h3 class="letter-back-title" id="modal-letter-title-back">Nuestra Promesa</h3>
+            </div>
+
+            <div class="letter-tabs">
+              <button class="btn-letter-tab active" id="tab-alan">👑 Carta de Alan</button>
+              <button class="btn-letter-tab" id="tab-lina">🌸 Respuesta de Lina</button>
+            </div>
+
+            <!-- Tab Alan Content -->
+            <div class="letter-content" id="modal-letter-text">
+              Carta romántica...
+            </div>
+
+            <!-- Tab Lina Content -->
+            <div class="letter-content" id="modal-letter-text-lina" style="display: none;">
+              <div class="lina-response-container">
+                <div id="lina-response-letter" style="white-space: pre-wrap;"></div>
+                <div class="lina-photo-container" id="lina-media-container" style="display: none;">
+                  <!-- Slider inyectado dinámicamente -->
+                </div>
+              </div>
+            </div>
+
+            <div class="letter-footer">
+              <span class="letter-signature" id="letter-signature-text">De Alan, con amor 💖</span>
+              <button class="btn-send-love" id="btn-send-love-spark">
+                Enviar Amor 💓
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- MODAL 2: MEMORIES SCRIBING EDITOR MODAL -->
+  <div class="modal-overlay" id="editor-modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close" id="btn-close-editor">×</button>
+
+      <div class="editor-header">
+        <h3 class="editor-title" id="editor-modal-title">Escribir Capítulo de Amor</h3>
+      </div>
+
+      <form id="editor-form">
+        <div class="editor-body">
+          <input type="hidden" id="edit-month-index">
+
+          <div class="form-group">
+            <label class="form-label" for="edit-title">Título del Mesversario</label>
+            <input type="text" class="form-input" id="edit-title" required
+              placeholder="Ej: El día que nos dijimos que sí">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="edit-caption">Breve Frase Corta (Estilo Polaroid)</label>
+            <input type="text" class="form-input" id="edit-caption" maxlength="70" required
+              placeholder="Ej: Mi momento favorito del año entero...">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="edit-letter">Tu Carta de Amor Completa (Se leerá en el reverso)</label>
+            <textarea class="form-input form-textarea" id="edit-letter" required
+              placeholder="Escribe aquí todas las palabras bonitas, promesas o anécdotas de este mes..."></textarea>
+          </div>
+
+          <!-- Gallery Media Manager (Photos and Videos) -->
+          <div class="form-group">
+            <label class="form-label">Galería de Recuerdos (Fotos y Videos) 📸🎥</label>
+            <div class="media-manager-section">
+              <div class="media-grid" id="edit-media-grid">
+                <!-- Live items populated by JS -->
+              </div>
+              
+              <!-- Add new item interface -->
+              <div class="media-add-panel">
+                <span class="preset-label" style="font-weight:600;">➕ Agregar Foto o Video:</span>
+                
+                <div class="media-add-type-toggle">
+                  <button type="button" class="btn-media-toggle active" id="btn-toggle-type-image" data-type="image">📸 Foto</button>
+                  <button type="button" class="btn-media-toggle" id="btn-toggle-type-video" data-type="video">🎥 Video</button>
+                </div>
+                
+                <div class="media-input-group">
+                  <!-- File Upload button -->
+                  <div class="file-upload-btn-wrapper">
+                    <button type="button" class="btn-upload-file" id="btn-trigger-file-upload">📁 Subir Local</button>
+                    <input type="file" id="edit-media-file-input" class="file-upload-input" accept="image/*,video/*" style="display:none;">
+                  </div>
+                  
+                  <span style="font-size:0.8rem; color:var(--text-muted);">o</span>
+                  
+                  <!-- URL Input -->
+                  <input type="text" id="edit-media-url-input" class="form-input media-url-input" placeholder="Pegar URL de Imagen o YouTube...">
+                  
+                  <button type="button" id="btn-add-media-item" class="btn-media-add-action">Añadir ✨</button>
+                </div>
+                
+                <div class="storage-warning" id="edit-storage-warning" style="display:none;">
+                  ⚠️ Subir videos locales grandes puede saturar la memoria. Se recomienda usar enlaces de YouTube o links directos.
+                </div>
+              </div>
+            </div>
+
+            <!-- Naturaleza presets -->
+            <div class="preset-selector-container">
+              <span class="preset-label">O selecciona un fondo predeterminado para añadir a la lista:</span>
+              <div class="presets-grid" id="editor-presets-grid">
+                <!-- Preset images injected dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-footer">
+          <button type="button" class="btn-modal btn-cancel" id="btn-cancel-edit">Cancelar</button>
+          <button type="submit" class="btn-modal btn-save">Guardar Cambios 💖</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- MODAL 3: LINA'S RESPONSE FORM MODAL -->
+  <div class="modal-overlay" id="lina-modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close" id="btn-close-lina-modal">×</button>
+
+      <div class="editor-header">
+        <h3 class="editor-title" id="lina-modal-title">💌 Dejar mi Respuesta de Amor (Lina)</h3>
+      </div>
+
+      <form id="lina-form">
+        <div class="editor-body">
+          <input type="hidden" id="lina-month-index">
+
+          <div class="form-group">
+            <label class="form-label" for="lina-comment">Tu Mensaje / Carta de Respuesta 🌸</label>
+            <textarea class="form-input form-textarea" id="lina-comment" required
+              placeholder="Escribe aquí tu cartita, lo que sentiste este mes, o tus palabras hermosas para Alan..."></textarea>
+          </div>
+
+          <!-- Lina's Gallery Media Manager -->
+          <div class="form-group">
+            <label class="form-label">Nuestros Recuerdos de este Mes (Fotos y Videos) 📸🎥</label>
+            <div class="media-manager-section lina-media-manager">
+              <div class="media-grid" id="lina-media-grid">
+                <!-- Live items populated by JS -->
+              </div>
+              
+              <!-- Add new item interface -->
+              <div class="media-add-panel">
+                <span class="preset-label" style="font-weight:600; color:var(--accent-pink);">➕ Agregar Foto o Video:</span>
+                
+                <div class="media-add-type-toggle">
+                  <button type="button" class="btn-media-toggle active" id="btn-lina-type-image" data-type="image" style="border-color:rgba(253,62,129,0.2);">📸 Foto</button>
+                  <button type="button" class="btn-media-toggle" id="btn-lina-type-video" data-type="video" style="border-color:rgba(253,62,129,0.2);">🎥 Video</button>
+                </div>
+                
+                <div class="media-input-group">
+                  <!-- File Upload button -->
+                  <div class="file-upload-btn-wrapper">
+                    <button type="button" class="btn-upload-file" id="btn-trigger-lina-file" style="border-color:rgba(253,62,129,0.2);">📁 Subir Local</button>
+                    <input type="file" id="lina-media-file-input" class="file-upload-input" accept="image/*,video/*" style="display:none;">
+                  </div>
+                  
+                  <span style="font-size:0.8rem; color:var(--text-muted);">o</span>
+                  
+                  <!-- URL Input -->
+                  <input type="text" id="lina-media-url-input" class="form-input media-url-input" placeholder="Pegar URL de Imagen o YouTube..." style="border-color:rgba(253,62,129,0.2);">
+                  
+                  <button type="button" id="btn-add-lina-media-item" class="btn-media-add-action" style="background:var(--accent-pink);">Añadir ✨</button>
+                </div>
+                
+                <div class="storage-warning" id="lina-storage-warning" style="display:none;">
+                  ⚠️ Subir videos locales grandes puede saturar la memoria. Se recomienda usar enlaces de YouTube o links directos.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-footer">
+          <button type="button" class="btn-modal btn-cancel" id="btn-cancel-lina">Cancelar</button>
+          <button type="submit" class="btn-modal btn-save">Guardar mi Carta 💖</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Premium Application Scripts -->
+  <script src="app.js"></script>
+</body>
+
+</html>
